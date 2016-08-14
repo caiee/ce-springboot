@@ -24,3 +24,15 @@ Convention over configuration (约定大于配置)
 * 多环境 配置文件 与 打包
 * 日志
     * 集成ELK(ElasticSearch, LogStash, Kafka)组件
+* 添加 Jenkins CI功能
+
+# 项目启动 #
+
+``` java
+git clone
+
+// 第一种做法
+mvn spring:run
+// 第二种
+运行 Application.java 中的 main 方法
+```
