@@ -12,6 +12,7 @@ Convention over configuration (约定大于配置)
 * √ `HttpMessageConverter` 修改为 `FastJson`
 * √ 完成 `全局返回值` 增强(格式统一)
 * √ 完成 `全局异常捕捉`
+* 图片`上传`，`大小`限制， (`格式`限制？)
 * 完成与各中间件集成
     * `Mybatis`
     * Mybatis 插件， `分页`插件 PageHelper 与 `自动生成代码`插件
