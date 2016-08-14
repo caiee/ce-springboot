@@ -9,6 +9,7 @@ Convention over configuration (约定大于配置)
 
 * √ 启动 HelloWorld
 * √ 提升 Spring 整体版本， 使用 4.3.2.RELEASE
+    * 新版本中最显而易见的是聚合注解 GetMapping = RequestMapping(value = xx, RequestMethod = xx)，非常爽。
 * √ HttpMessageConverter 修改为 FastJson
 * √ 完成 全局返回值 增强(格式统一)
 * √ 完成 全局异常捕捉
