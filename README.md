@@ -9,6 +9,7 @@ Convention over configuration (约定大于配置)
 
 * √ 启动 `HelloWorld`
 * √ 提升 `Spring` 整体版本， 使用 4.3.2.RELEASE
+    * 版本提高后 原来 RequestMapping(value = , RequestMethod = ) 可以直接 用 GetMapping()，较为直观。
 * √ `HttpMessageConverter` 修改为 `FastJson`
 * √ 完成 `全局返回值` 增强(格式统一)
 * √ 完成 `全局异常捕捉`
