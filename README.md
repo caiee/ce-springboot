@@ -14,6 +14,7 @@ Convention over configuration (约定大于配置)
 * √ 完成 `全局返回值` 增强(格式统一)
 * √ 完成 `全局异常捕捉`
 * 图片`上传`，`大小`限制， (`格式`限制？)
+* 自定义监听端口，访问路径
 * 完成与各中间件集成
     * `Mybatis`
     * Mybatis 插件， `分页`插件 PageHelper 与 `自动生成代码`插件
@@ -24,6 +25,7 @@ Convention over configuration (约定大于配置)
     * `web` 测试
     * `dao` 测试
 * `多环境` 配置文件 与 `打包`
+    * 多环境配置文件使用
 * 日志
     * 集成`ELK`(ElasticSearch, LogStash, Kafka)组件
 * 添加 Jenkins `CI` 功能
