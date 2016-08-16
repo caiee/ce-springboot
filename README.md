@@ -29,6 +29,7 @@ Convention over configuration (约定大于配置)
 * 日志
     * 集成`ELK`(ElasticSearch, LogStash, Kafka)组件
 * 添加 Jenkins `CI` 功能
+* 是否可以 学习 并 使用 并集成 Spring Security ? 
 
 # 项目启动 #
 
