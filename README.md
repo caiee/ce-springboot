@@ -3,6 +3,7 @@ Convention over configuration (约定大于配置)
 
 # 个人想法 #
 鉴于目前 Spring Boot 非常火，我就想倒腾倒腾，
+
 将一些项目中所必备的基础都先搭好，留一个架子，看以后是否有机会可以用到。
 
 # 需求 #
@@ -21,6 +22,7 @@ Convention over configuration (约定大于配置)
     * Redis
     * Mongo
     * Kafka (zm-koper)
+* 集成 Swagger API文档
 * 实现单元测试(web, dao)
     * `web` 测试
     * `dao` 测试
