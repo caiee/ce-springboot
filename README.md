@@ -8,30 +8,31 @@ Convention over configuration (约定大于配置)
 
 # 需求 #
 
-* √ 启动 `HelloWorld`
-* √ 提升 `Spring` 整体版本， 使用 4.3.2.RELEASE
-    * 版本提高后 原来 RequestMapping(value = , RequestMethod = ) 可以直接 用 GetMapping()，较为直观。
-* √ `HttpMessageConverter` 修改为 `FastJson`
-* √ 完成 `全局返回值` 增强(格式统一)
-* √ 完成 `全局异常捕捉`
-* 图片`上传`，`大小`限制， (`格式`限制？)
-* 自定义监听端口，访问路径
-* 完成与各中间件集成
-    * `Mybatis`
-    * Mybatis 插件， `分页`插件 PageHelper 与 `自动生成代码`插件
-    * Redis
-    * Mongo
-    * Kafka (zm-koper)
-* 集成 Swagger API文档
-* 实现单元测试(web, dao)
-    * `web` 测试
-    * `dao` 测试
-* `多环境` 配置文件 与 `打包`
-    * 多环境配置文件使用
-* 日志
-    * 集成`ELK`(ElasticSearch, LogStash, Kafka)组件
-* 添加 Jenkins `CI` 功能
-* 是否可以 学习 并 使用 并集成 Spring Security ? 
+- [x] 启动 `HelloWorld`
+- [ ] 提升 `Spring` 整体版本， 使用 4.3.2.RELEASE
+    - [ ] 版本提高后 原来 RequestMapping(value = , RequestMethod = ) 可以直接 用 GetMapping()，较为直观。
+- [ ] `HttpMessageConverter` 修改为 `FastJson`
+- [ ] 完成 `全局返回值` 增强(格式统一)
+- [ ] 完成 `全局异常捕捉`
+- [ ]  图片`上传`，`大小`限制， (`格式`限制？)
+- [ ] 自定义监听端口，访问路径
+- [ ] 完成与各中间件集成
+    - [ ] `Mybatis`
+    - [ ] Mybatis 插件， `分页`插件 PageHelper 与 `自动生成代码`插件
+    - [ ] Redis
+    - [ ] Mongo
+    - [ ] Kafka (zm-koper)
+- [ ] 集成 Swagger API文档
+- [ ] 实现单元测试(web, dao)
+    - [ ] `web` 测试
+    - [ ] `dao` 测试
+- [ ] `多环境` 配置文件 与 `打包`
+    - [ ] 多环境配置文件使用
+- [ ] 日志
+    - [ ] 集成`ELK`(ElasticSearch, LogStash, Kafka)组件
+    - [ ] logback.xml 使用 groovy 语法
+- [ ] 添加 Jenkins `CI` 功能
+- [ ] 是否可以 学习 并 使用 并集成 Spring Security ?
 
 # 项目启动 #
 

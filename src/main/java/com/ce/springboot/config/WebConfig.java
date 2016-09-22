@@ -1,4 +1,4 @@
-package com.ce.springboot.configuration;
+package com.ce.springboot.config;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.ce.springboot.configuration;
+package com.ce.springboot.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
