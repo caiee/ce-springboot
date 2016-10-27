@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 限制以下框架的Log日志输出, 如果不对可以修改  -->
+    <logger name="org.springframework" level="WARN"/>
+
+    <logger name="org.apache.zookeeper" level="INFO"/>
+
+    <logger name="org.apache.kafka" level="INFO"/>
+
+    <logger name="com.alibaba.dubbo" level="INFO"/>
+
+    <logger name="org.hibernate.validator" level="INFO"/>
+
+    <!-- 彩色日志依赖的渲染类 -->
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx"
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+    <!-- 彩色日志格式 -->
+    <property name="CONSOLE_LOG_PATTERN"
+              value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+
+    <!-- 控制台输出  -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <!-- This is the kafkaAppender -->
+    <appender name="kafkaAppender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <encoder class="com.github.danielwegener.logback.kafka.encoding.PatternLayoutKafkaMessageEncoder">
+            <layout class="net.logstash.logback.layout.LogstashLayout"/>
+        </encoder>
+        <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.RoundRobinKeyingStrategy"/>
+        <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy"/>
+
+        <!-- each <producerConfig> translates to regular kafka-client config (format: key=value) -->
+        <!-- producer configs are documented here: https://kafka.apache.org/documentation.html#newproducerconfigs -->
+        <!-- bootstrap.servers is the only mandatory producerConfig -->
+
+        <!-- 配置各环境的 地址 与 topic -->
+        <springProfile name="local">
+            <topic>template</topic>
+            <producerConfig>bootstrap.servers=43.241.222.106:9092</producerConfig>
+        </springProfile>
+
+        <springProfile name="dev">
+            <topic>template</topic>
+            <producerConfig>bootstrap.servers=10.168.116.252:9092</producerConfig>
+        </springProfile>
+
+        <springProfile name="test">
+            <topic>template</topic>
+            <producerConfig>bootstrap.servers=10.47.49.182:9092</producerConfig>
+        </springProfile>
+
+        <springProfile name="release">
+            <topic>template</topic>
+            <producerConfig>bootstrap.servers=10.47.106.7:9092,10.47.106.147:9092,10.47.105.229:9092</producerConfig>
+        </springProfile>
+
+        <springProfile name="prod">
+            <topic>template</topic>
+            <producerConfig>bootstrap.servers=10.47.106.7:9092,10.47.106.147:9092,10.47.105.229:9092</producerConfig>
+        </springProfile>
+    </appender>
+
+    <!-- 异步输出 -->
+    <appender name="async" class="ch.qos.logback.classic.AsyncAppender">
+        <!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+        <queueSize>512</queueSize>
+        <!-- 添加附加的appender,最多只能添加一个 -->
+        <appender-ref ref="kafkaAppender"/>
+    </appender>
+
+    <!-- 本地的为控制台输出 -->
+    <springProfile name="local">
+        <root>
+            <!-- 在开发环境配置为 stdout -->
+            <appender-ref ref="stdout"/>
+        </root>
+    </springProfile>
+
+    <!-- 其他环境为异步输出 -->
+    <springProfile name="dev,test,release,prod">
+        <root>
+            <!-- 在测试/生产环境配置为 async -->
+            <!-- 异步输入日志到Kafka, Level 为 WARN -->
+            <appender-ref ref="async"/>
+        </root>
+    </springProfile>
+
+</configuration>

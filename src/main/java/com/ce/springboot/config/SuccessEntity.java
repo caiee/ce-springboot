@@ -1,4 +1,4 @@
-package com.ce.springboot.entity;
+package com.ce.springboot.config;
 
 /**
  * @author caie

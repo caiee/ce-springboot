@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+
+    <dubbo:registry address="zookeeper://121.196.232.148:2181?backup=121.196.245.7:2181,121.196.232.166:2181"
+                    check="false"/>
+    <!-- dubbo 短信服务注入-->
+
+    <dubbo:application name="customer"/>
+
+     <!--用户服务注入-->
+    <dubbo:reference id="memberRemoteService" interface="com.zhaimi.member.service.MemberService"
+                     version="1.0.3"/>
+
+
+</beans>

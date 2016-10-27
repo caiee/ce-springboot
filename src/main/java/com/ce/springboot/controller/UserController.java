@@ -3,10 +3,11 @@ package com.ce.springboot.controller;
 
 import com.ce.springboot.config.InjectPropertiesField;
 import com.ce.springboot.config.InjectYmlField;
+import com.ce.springboot.config.SuccessEntity;
 import com.ce.springboot.entity.InvalidArgumentException;
-import com.ce.springboot.entity.SuccessEntity;
 import com.ce.springboot.entity.User;
 import com.ce.springboot.service.UserService;
+import com.google.common.collect.ImmutableMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,7 +86,7 @@ public class UserController {
 
 
     @GetMapping("x")
-    public String getString() {
+    public Object getString() {
 
         // 配置文件注入 YML 语法
         final Integer age = injectField.getAge();
@@ -95,7 +96,7 @@ public class UserController {
         // 配置文件注入 Properties 语法
         final String pay_url = injectPropertiesField.getPAY_URL();
 
-        return name + " \n " + pay_url;
+        return ImmutableMap.of("key", name + " \n " + pay_url);
     }
 
 }

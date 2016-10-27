@@ -6,11 +6,9 @@ import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
-@Component
 @ControllerAdvice
 public class ReturnValueConverterAdvice implements ResponseBodyAdvice {
 
@@ -58,8 +56,7 @@ public class ReturnValueConverterAdvice implements ResponseBodyAdvice {
      */
     public final Object beforeBodyWrite(final Object body, final MethodParameter returnType, final MediaType selectedContentType, final Class selectedConverterType, final ServerHttpRequest request, final ServerHttpResponse response) {
 
-        return body;
-        /*if (null == body)
+        if (null == body)
             return new ReturnValue(true, null);
         else if (body instanceof ReturnValue)
             return body;
@@ -68,6 +65,6 @@ public class ReturnValueConverterAdvice implements ResponseBodyAdvice {
         else if (body instanceof RawString)
             return printRawString(response, body.toString());
         else
-            return new ReturnValue(true, body);*/
+            return new ReturnValue(true, body);
     }
 }

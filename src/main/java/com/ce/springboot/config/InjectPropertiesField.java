@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
  * @since 16/9/1
  */
 @Configuration
-@PropertySource("classpath:${spring.profiles.active}/config.properties")
+@PropertySource("classpath:config.properties")
 public class InjectPropertiesField {
 
     @Value("${VALIDCODE_URL}")

@@ -19,6 +19,7 @@ public class InvalidArgumentException extends Exception {
 
     /**
      * 有参构造方法.
+     *
      * @param s 参数
      */
     public InvalidArgumentException(final String s) {

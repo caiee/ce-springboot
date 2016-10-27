@@ -1,0 +1,36 @@
+spring:
+  datasource:
+      name: test
+      url: jdbc:mysql://120.27.194.172:3306/zhaimi?useUnicode=true&characterEncoding=utf8
+      username: zmdata
+      password: 963327ceac71Llce9
+      # 使用druid数据源
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+  main:
+    web-environment: true
+
+  # redis dev 配置
+  redis:
+    host: 5f3049ab32f84800.m.cnhza.kvstore.aliyuncs.com
+    password: Ee7rIe3k3s
+    port: 6379
+    pool:
+        max-idle: 250
+        min-idle: 100
+        max-active: 1000
+        max-wait: -1
+
