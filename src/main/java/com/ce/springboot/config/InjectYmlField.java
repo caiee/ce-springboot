@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * @author caie
  * @since 16/9/1
  */
-@ConfigurationProperties(prefix = "person", locations = "config.yml")
+@ConfigurationProperties(prefix = "person", locations = "${spring.profiles.active}/config.yml")
 @Component
 public class InjectYmlField {
     private String name;
