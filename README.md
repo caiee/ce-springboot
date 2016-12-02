@@ -2,6 +2,7 @@
 [![codecov](https://codecov.io/gh/whitewallpaper/ce-springboot/branch/master/graph/badge.svg)](https://codecov.io/gh/whitewallpaper/ce-springboot)
 
 1
+2
 # Boot Template #
 一个 `SpringBoot` 的模板， 集成了一个后端理应具备的功能。
 如果你发现还缺了些什么，欢迎补充：）
