@@ -136,7 +136,7 @@
                 <version>2.14.1</version>
                 <configuration>
                     <includes>
-                        <include>**/*TestCase*.java</include>
+                        <include>**/TestUtils.java</include>
                     </includes>
                 </configuration>
             </plugin>
