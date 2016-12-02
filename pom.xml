@@ -13,7 +13,7 @@
         <version>1.3.2.RELEASE</version>
     </parent>
 
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>nexus</id>
             <name>nexus</name>
@@ -39,7 +39,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
-    </pluginRepositories>
+    </pluginRepositories>-->
 
 
     <properties>
@@ -182,13 +182,6 @@
                     </execution>
                     <execution>
                         <id>report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>post-unit-test</id>
                         <phase>test</phase>
                         <goals>
                             <goal>report</goal>
