@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/whitewallpaper/ce-springboot.png)](https://travis-ci.org/whitewallpaper/ce-springboot)
 [![codecov](https://codecov.io/gh/whitewallpaper/ce-springboot/branch/master/graph/badge.svg)](https://codecov.io/gh/whitewallpaper/ce-springboot)
 
 
