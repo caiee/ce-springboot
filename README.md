@@ -1,10 +1,6 @@
 [![Build Status](https://img.shields.io/travis/whitewallpaper/ce-springboot/master.svg)](https://travis-ci.org/whitewallpaper/ce-springboot)
 [![codecov](https://codecov.io/gh/whitewallpaper/ce-springboot/branch/master/graph/badge.svg)](https://codecov.io/gh/whitewallpaper/ce-springboot)
 
-1
-2
-3
-4
 # Boot Template #
 一个 `SpringBoot` 的模板， 集成了一个后端理应具备的功能。
 如果你发现还缺了些什么，欢迎补充：）
